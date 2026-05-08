@@ -91,13 +91,18 @@
     });
   });
 
-  // --- Contact Form Validation ---
+  // --- Contact Form Submit UX ---
   const forms = document.querySelectorAll('.contact-form');
   forms.forEach(form => {
     form.addEventListener('submit', (e) => {
+      const action = (form.getAttribute('action') || '').trim();
+      const isFormspree = /^https:\/\/formspree\.io\/f\//i.test(action);
+      const shouldFakeSubmit = form.hasAttribute('data-fake-submit');
+      if (isFormspree || !shouldFakeSubmit) return;
+
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      const orig = btn.textContent;
+      if (!btn) return;
       btn.textContent = 'Message Sent!';
       btn.style.background = 'var(--green)';
       btn.disabled = true;

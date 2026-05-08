@@ -115,12 +115,8 @@
             <div class="form-card">
               <h3>Participant Referral <span style="color:var(--orange);font-size:var(--text-sm);font-weight:600;display:block;margin-top:2px">Step 1: Basic Information</span></h3>
 
-              <!-- Success state (hidden until submit) -->
-              <div id="form-success" style="display:none;text-align:center;padding:var(--space-8) 0">
-                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto var(--space-4)"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-                <h4 style="color:var(--green);margin-bottom:var(--space-2)">Step 1 Submitted!</h4>
-                <p style="margin-bottom:var(--space-4)">Redirecting you to Step 2 now...</p>
-                <a href="step2.html" class="btn btn--green">Go to Step 2 Now</a>
+              <div style="background:var(--color-surface-alt);border:1.5px solid var(--color-border);border-radius:10px;padding:var(--space-3) var(--space-4);margin-bottom:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted)">
+                Step 2 secure intake is completed through our Google Form (linked on the next page).
               </div>
 
               <form id="referral-form-1" class="contact-form" novalidate>
@@ -195,15 +191,7 @@
                   <textarea id="p-reason" name="reason" required rows="4" placeholder="Please describe what brings you to Upstar and what kind of support you are looking for..."></textarea>
                 </div>
 
-                <!-- Error message -->
-                <div id="form-error" style="display:none;background:rgba(220,53,69,0.08);border:1px solid rgba(220,53,69,0.3);border-radius:8px;padding:var(--space-3) var(--space-4);color:#c0392b;font-size:var(--text-sm);margin-bottom:var(--space-4)">
-                  Something went wrong. Please try again or call us at <strong>(216) 352.3550</strong>.
-                </div>
-
-                <button type="submit" id="submit-btn" class="btn btn--green btn--lg" style="width:100%;margin-top:var(--space-2)">
-                  <span id="btn-label">Continue to Step 2</span>
-                  <svg id="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;animation:spin 0.8s linear infinite;margin-left:8px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-                </button>
+                <a href="step2.html" id="submit-btn" class="btn btn--green btn--lg" style="width:100%;margin-top:var(--space-2)">Continue to Step 2</a>
                 <p class="form-note">Your basic info is safe with us. Step 2 will ask for Medicaid, date of birth, and other secure details. If you are in crisis, call or text <strong>988</strong> now.</p>
 
               </form>
@@ -260,71 +248,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // API base: works locally and after deploy via port proxy
-    const API = '__PORT_8000__'.startsWith('__') ? 'http://localhost:8000' : '__PORT_8000__';
-
-    const form = document.getElementById('referral-form-1');
-    const submitBtn = document.getElementById('submit-btn');
-    const btnLabel = document.getElementById('btn-label');
-    const btnSpinner = document.getElementById('btn-spinner');
-    const formError = document.getElementById('form-error');
-    const formSuccess = document.getElementById('form-success');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      formError.style.display = 'none';
-
-      // Basic validation
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      // Loading state
-      submitBtn.disabled = true;
-      btnLabel.textContent = 'Sending...';
-      btnSpinner.style.display = 'inline-block';
-
-      const data = {
-        first_name: form.first_name.value.trim(),
-        last_name: form.last_name.value.trim(),
-        address: form.address.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        guardian_name: form.guardian_name.value.trim(),
-        guardian_relationship: form.guardian_relationship.value,
-        guardian_phone: form.guardian_phone.value.trim(),
-        guardian_email: form.guardian_email.value.trim(),
-        reason: form.reason.value.trim()
-      };
-
-      try {
-        const res = await fetch(`${API}/api/referral`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (res.ok) {
-          // Show success, hide form
-          form.style.display = 'none';
-          formSuccess.style.display = 'block';
-          // Redirect to Step 2 after short delay
-          setTimeout(() => {
-            window.location.href = 'step2.html';
-          }, 1800);
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (err) {
-        formError.style.display = 'block';
-        submitBtn.disabled = false;
-        btnLabel.textContent = 'Continue to Step 2';
-        btnSpinner.style.display = 'none';
-      }
-    });
-  </script>
 
   <style>
     @keyframes spin { to { transform: rotate(360deg); } }

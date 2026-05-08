@@ -74,7 +74,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           <div>
             <p style="font-weight:600;color:var(--green);font-family:var(--font-display);margin-bottom:2px">Your information is protected</p>
-            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0">This form is encrypted and confidential. The information you share is used only for your care enrollment at Upstar Mental Health Services.</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0">For secure online intake, please use our Google Form link below. Do not submit sensitive details through this page.</p>
           </div>
         </div>
 
@@ -124,13 +124,8 @@
             <div class="form-card">
               <h3>Secure Intake Form <span style="color:var(--green);font-size:var(--text-sm);font-weight:600;display:block;margin-top:2px">Step 2: Confidential Details</span></h3>
 
-              <!-- Success state -->
-              <div id="form2-success" style="display:none;text-align:center;padding:var(--space-10) var(--space-4)">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto var(--space-4)"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-                <h4 style="color:var(--green);margin-bottom:var(--space-3)">All Done!</h4>
-                <p style="margin-bottom:var(--space-2)">Your referral has been submitted. Our team will reach out within 1 to 2 business days.</p>
-                <p style="font-size:var(--text-sm);color:var(--color-text-muted)">If you need to speak with someone sooner, call us at <strong>(216) 352.3550</strong>.</p>
-                <a href="index.html" class="btn btn--primary" style="margin-top:var(--space-6)">Back to Home</a>
+              <div style="background:var(--color-surface-alt);border:1.5px solid var(--color-border);border-radius:10px;padding:var(--space-3) var(--space-4);margin-bottom:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted)">
+                This on-page form does not submit online. Please use the secure Google Form to complete Step 2.
               </div>
 
               <form id="referral-form-2" class="contact-form" novalidate>
@@ -211,16 +206,8 @@
                   </select>
                 </div>
 
-                <!-- Error message -->
-                <div id="form2-error" style="display:none;background:rgba(220,53,69,0.08);border:1px solid rgba(220,53,69,0.3);border-radius:8px;padding:var(--space-3) var(--space-4);color:#c0392b;font-size:var(--text-sm);margin-bottom:var(--space-4)">
-                  Something went wrong. Please try again or call us at <strong>(216) 352.3550</strong>.
-                </div>
-
-                <button type="submit" id="submit-btn-2" class="btn btn--green btn--lg" style="width:100%;margin-top:var(--space-4)">
-                  <span id="btn2-label">Submit Secure Information</span>
-                  <svg id="btn2-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;animation:spin 0.8s linear infinite;margin-left:8px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-                </button>
-                <p class="form-note" style="margin-top:var(--space-3)">All information is encrypted and strictly confidential. If you are in crisis, call or text <strong>988</strong> now.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScvmOFbND3Pdm7U_BXsxmtLyWs0H0cPQa6eBiICRoOlvNlThA/viewform" target="_blank" rel="noopener" id="submit-btn-2" class="btn btn--green btn--lg" style="width:100%;margin-top:var(--space-4);text-align:center">Open Secure Google Form</a>
+                <p class="form-note" style="margin-top:var(--space-3)">For privacy, submit Medicaid, date of birth, and Social Security details through the secure Google Form only. If you are in crisis, call or text <strong>988</strong> now.</p>
 
               </form>
             </div>
@@ -283,70 +270,6 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    const API = '__PORT_8000__'.startsWith('__') ? 'http://localhost:8000' : '__PORT_8000__';
-
-    const form2 = document.getElementById('referral-form-2');
-    const submitBtn2 = document.getElementById('submit-btn-2');
-    const btn2Label = document.getElementById('btn2-label');
-    const btn2Spinner = document.getElementById('btn2-spinner');
-    const form2Error = document.getElementById('form2-error');
-    const form2Success = document.getElementById('form2-success');
-
-    // SSN auto-format: XXX-XX-XXXX
-    document.getElementById('s-ssn').addEventListener('input', function () {
-      let v = this.value.replace(/\D/g, '').slice(0, 9);
-      if (v.length > 5) v = v.slice(0,3) + '-' + v.slice(3,5) + '-' + v.slice(5);
-      else if (v.length > 3) v = v.slice(0,3) + '-' + v.slice(3);
-      this.value = v;
-    });
-
-    form2.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      form2Error.style.display = 'none';
-
-      if (!form2.checkValidity()) {
-        form2.reportValidity();
-        return;
-      }
-
-      submitBtn2.disabled = true;
-      btn2Label.textContent = 'Submitting...';
-      btn2Spinner.style.display = 'inline-block';
-
-      const data = {
-        full_name: form2.full_name.value.trim(),
-        dob: form2.dob.value,
-        ssn: form2.ssn.value.trim(),
-        medicaid: form2.medicaid.value.trim(),
-        member_id: form2.member_id.value.trim(),
-        gender: form2.gender.value,
-        marital_status: form2.marital_status.value,
-        race: form2.race.value
-      };
-
-      try {
-        const res = await fetch(`${API}/api/referral-step2`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-
-        if (res.ok) {
-          form2.style.display = 'none';
-          form2Success.style.display = 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (err) {
-        form2Error.style.display = 'block';
-        submitBtn2.disabled = false;
-        btn2Label.textContent = 'Submit Secure Information';
-        btn2Spinner.style.display = 'none';
-      }
-    });
-  </script>
 
   <style>
     @keyframes spin { to { transform: rotate(360deg); } }
