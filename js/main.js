@@ -100,9 +100,9 @@
       const shouldFakeSubmit = form.hasAttribute('data-fake-submit');
       if (isFormspree || !shouldFakeSubmit) return;
 
-      e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       if (!btn) return;
+      e.preventDefault();
       btn.textContent = 'Message Sent!';
       btn.style.background = 'var(--green)';
       btn.disabled = true;
