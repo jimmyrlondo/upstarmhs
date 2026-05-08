@@ -98,15 +98,16 @@
       const action = (form.getAttribute('action') || '').trim();
       const isFormspree = /^https:\/\/formspree\.io\/f\//i.test(action);
       const shouldFakeSubmit = form.hasAttribute('data-fake-submit');
-      if (isFormspree || !shouldFakeSubmit) return;
+      if (!isFormspree && shouldFakeSubmit) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        if (!btn) return;
 
-      const btn = form.querySelector('button[type="submit"]');
-      if (!btn) return;
-      e.preventDefault();
-      btn.textContent = 'Message Sent!';
-      btn.style.background = 'var(--green)';
-      btn.disabled = true;
-      form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
+        btn.textContent = 'Message Sent!';
+        btn.style.background = 'var(--green)';
+        btn.disabled = true;
+        form.querySelectorAll('input, textarea, select').forEach(f => f.disabled = true);
+      }
     });
   });
 
