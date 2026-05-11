@@ -22,6 +22,7 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About Us</a>
         <a href="services.html" class="nav-link">Services</a>
+        <a href="careers.html" class="nav-link">Careers</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
       <div class="header-actions">
@@ -36,6 +37,7 @@
       <a href="index.html" class="mobile-nav__link">Home</a>
       <a href="about.html" class="mobile-nav__link">About Us</a>
       <a href="services.html" class="mobile-nav__link">Services</a>
+      <a href="careers.html" class="mobile-nav__link">Careers</a>
       <a href="contact.html" class="mobile-nav__link">Contact</a>
       <div class="mobile-nav__ctas">
         <a href="start-services.html" class="btn btn--primary btn--lg">Start Services</a>
@@ -47,29 +49,15 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <div class="page-hero__badge"><span class="badge">Step 1 of 2</span></div>
         <h1>Start Your Journey to Wellness</h1>
-        <p>We make it simple. Fill out your basic information below and our team will follow up with next steps. It only takes a few minutes.</p>
+        <p>Fill out the form below and our care team will reach out within 1 to 2 business days to discuss next steps.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container container--narrow">
-
-        <!-- STEP INDICATOR -->
-        <div class="step-indicator" style="display:flex;gap:var(--space-3);align-items:center;margin-bottom:var(--space-8)">
-          <div class="step-pill step-pill--active">
-            <span class="step-pill__num">1</span>
-            <span class="step-pill__label">Basic Info</span>
-          </div>
-          <div class="step-pill__line"></div>
-          <div class="step-pill step-pill--upcoming">
-            <span class="step-pill__num">2</span>
-            <span class="step-pill__label">Secure Info</span>
-          </div>
-        </div>
-
         <div class="contact-layout">
+
           <!-- HOW IT WORKS -->
           <div data-anim>
             <h2 style="font-size:var(--text-xl);margin-bottom:var(--space-6)">How It Works</h2>
@@ -77,26 +65,19 @@
               <div class="step-item">
                 <div class="step-num">1</div>
                 <div>
-                  <h4>Basic Information</h4>
-                  <p>Share your name, contact info, and a brief reason for reaching out. This is Step 1.</p>
+                  <h4>Complete This Form</h4>
+                  <p>Provide the participant's information, insurance details, and referring source. All fields are submitted securely.</p>
                 </div>
               </div>
               <div class="step-item">
                 <div class="step-num">2</div>
-                <div>
-                  <h4>Secure Details</h4>
-                  <p>Step 2 collects your Medicaid number, date of birth, and other sensitive intake details through a secure form.</p>
-                </div>
-              </div>
-              <div class="step-item">
-                <div class="step-num">3</div>
                 <div>
                   <h4>We'll Reach Out</h4>
                   <p>A member of our care team will contact you within 1 to 2 business days to discuss next steps.</p>
                 </div>
               </div>
               <div class="step-item">
-                <div class="step-num">4</div>
+                <div class="step-num">3</div>
                 <div>
                   <h4>Begin Your Care</h4>
                   <p>Your personalized care plan begins. We work with you every step of the way.</p>
@@ -110,105 +91,304 @@
             </div>
           </div>
 
-          <!-- FORM 1: BASIC INFO -->
+          <!-- FORM -->
           <div data-anim>
             <div class="form-card">
-              <h3>Participant Referral <span style="color:var(--orange);font-size:var(--text-sm);font-weight:600;display:block;margin-top:2px">Step 1: Basic Information</span></h3>
+              <h3>Participant Referral</h3>
 
-              <!-- Success state (hidden until submit) -->
+              <!-- Success state -->
               <div id="form-success" style="display:none;text-align:center;padding:var(--space-8) 0">
                 <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto var(--space-4)"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-                <h4 style="color:var(--green);margin-bottom:var(--space-2)">Step 1 Submitted!</h4>
-                <p style="margin-bottom:var(--space-4)">Redirecting you to Step 2 now...</p>
-                <a href="step2.html" class="btn btn--green">Go to Step 2 Now</a>
+                <h4 style="color:var(--green);margin-bottom:var(--space-2)">Referral Submitted!</h4>
+                <p>Thank you. A member of our care team will be in touch within 1 to 2 business days.</p>
               </div>
 
-              <form id="referral-form-1" class="contact-form" novalidate>
+              <form id="referral-form" class="contact-form" novalidate>
 
-                <!-- PARTICIPANT INFORMATION -->
-                <p class="form-section-label">Participant Information</p>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="p-first">First Name <span style="color:var(--orange)">*</span></label>
-                    <input type="text" id="p-first" name="first_name" required autocomplete="given-name" placeholder="Jane" />
-                  </div>
-                  <div class="form-group">
-                    <label for="p-last">Last Name <span style="color:var(--orange)">*</span></label>
-                    <input type="text" id="p-last" name="last_name" required autocomplete="family-name" placeholder="Smith" />
-                  </div>
+                <!-- WHO IS THIS FOR -->
+                <p class="form-section-label">Who is this referral for?</p>
+                <div class="referral-type-group">
+                  <label class="type-card" id="type-child-label">
+                    <input type="radio" name="referral_type" value="child" id="type-child" />
+                    <div class="type-card__inner">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                      <span class="type-card__title">A Child</span>
+                      <span class="type-card__sub">Under 18</span>
+                    </div>
+                  </label>
+                  <label class="type-card" id="type-adult-label">
+                    <input type="radio" name="referral_type" value="adult" id="type-adult" />
+                    <div class="type-card__inner">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7 7 0 0 1 13 0"/></svg>
+                      <span class="type-card__title">An Adult</span>
+                      <span class="type-card__sub">18 or older</span>
+                    </div>
+                  </label>
                 </div>
 
-                <div class="form-group">
-                  <label for="p-address">Address <span style="color:var(--orange)">*</span></label>
-                  <input type="text" id="p-address" name="address" required autocomplete="street-address" placeholder="123 Main St, City, OH 44000" />
-                </div>
+                <!-- CHILD FIELDS -->
+                <div id="child-fields" style="display:none">
+                  <p class="form-section-label" style="margin-top:var(--space-6)">Child's Information</p>
 
-                <div class="form-row">
                   <div class="form-group">
-                    <label for="p-phone">Phone Number <span style="color:var(--orange)">*</span></label>
-                    <input type="tel" id="p-phone" name="phone" required autocomplete="tel" placeholder="(216) 555-0000" />
+                    <label for="child-name">Child's Name <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="child-name" name="child_name" autocomplete="name" placeholder="Full name" />
                   </div>
-                  <div class="form-group">
-                    <label for="p-email">Email Address <span style="color:var(--orange)">*</span></label>
-                    <input type="email" id="p-email" name="email" required autocomplete="email" placeholder="jane@example.com" />
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="child-dob">Date of Birth <span style="color:var(--orange)">*</span></label>
+                      <input type="date" id="child-dob" name="child_dob" />
+                    </div>
+                    <div class="form-group">
+                      <label for="child-age">Age</label>
+                      <input type="text" id="child-age" name="child_age" placeholder="Auto-calculated" readonly style="background:var(--color-surface-alt);cursor:default;" />
+                    </div>
                   </div>
-                </div>
 
-                <!-- PARENT / GUARDIAN -->
-                <p class="form-section-label" style="margin-top:var(--space-6)">Parent / Guardian <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--color-text-muted);font-size:var(--text-xs)">(if applicable)</span></p>
-
-                <div class="form-row">
                   <div class="form-group">
-                    <label for="g-name">Guardian Name</label>
+                    <label for="child-ssn">Social Security Number <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="child-ssn" name="child_ssn" placeholder="XXX-XX-XXXX" maxlength="11" autocomplete="off" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="child-race">Race <span style="color:var(--orange)">*</span></label>
+                    <select id="child-race" name="child_race">
+                      <option value="" disabled selected>Select...</option>
+                      <option>American Indian or Alaska Native</option>
+                      <option>Asian</option>
+                      <option>Black or African American</option>
+                      <option>Native Hawaiian or Other Pacific Islander</option>
+                      <option>White</option>
+                      <option>Middle Eastern or North African</option>
+                      <option>Multiracial</option>
+                      <option>Other</option>
+                      <option>Prefer Not to Answer</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="child-address">Address <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="child-address" name="child_address" autocomplete="street-address" placeholder="123 Main St, City, OH 44000" />
+                  </div>
+
+                  <p class="form-section-label" style="margin-top:var(--space-6)">Parent / Guardian Information</p>
+
+                  <div class="form-group">
+                    <label for="g-name">Parent/Guardian Name <span style="color:var(--orange)">*</span></label>
                     <input type="text" id="g-name" name="guardian_name" autocomplete="name" placeholder="Full name" />
                   </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="g-phone">Phone Number <span style="color:var(--orange)">*</span></label>
+                      <input type="tel" id="g-phone" name="guardian_phone" autocomplete="tel" placeholder="(216) 555-0000" />
+                    </div>
+                    <div class="form-group">
+                      <label for="g-email">Email Address <span style="color:var(--orange)">*</span></label>
+                      <input type="email" id="g-email" name="guardian_email" autocomplete="email" placeholder="guardian@example.com" />
+                    </div>
+                  </div>
+
                   <div class="form-group">
-                    <label for="g-relationship">Relationship</label>
+                    <label for="g-relationship">Relationship to Child <span style="color:var(--orange)">*</span></label>
                     <select id="g-relationship" name="guardian_relationship">
                       <option value="" disabled selected>Select...</option>
-                      <option>Parent</option>
+                      <option>Mother</option>
+                      <option>Father</option>
+                      <option>Stepmother</option>
+                      <option>Stepfather</option>
+                      <option>Grandmother</option>
+                      <option>Grandfather</option>
+                      <option>Aunt</option>
+                      <option>Uncle</option>
+                      <option>Sibling</option>
                       <option>Legal Guardian</option>
-                      <option>Grandparent</option>
                       <option>Foster Parent</option>
+                      <option>Adoptive Parent</option>
+                      <option>Cousin</option>
+                      <option>Family Friend</option>
+                      <option>Case Manager</option>
+                      <option>Social Worker</option>
+                      <option>Therapist</option>
+                      <option>Teacher</option>
+                      <option>School Counselor</option>
+                      <option>Probation Officer</option>
                       <option>Other</option>
                     </select>
                   </div>
                 </div>
+                <!-- END CHILD FIELDS -->
 
-                <div class="form-row">
+                <!-- ADULT FIELDS -->
+                <div id="adult-fields" style="display:none">
+                  <p class="form-section-label" style="margin-top:var(--space-6)">Your Information</p>
+
                   <div class="form-group">
-                    <label for="g-phone">Guardian Phone</label>
-                    <input type="tel" id="g-phone" name="guardian_phone" autocomplete="tel" placeholder="(216) 555-0000" />
+                    <label for="adult-name">Full Name <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="adult-name" name="adult_name" autocomplete="name" placeholder="Full name" />
                   </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="adult-dob">Date of Birth <span style="color:var(--orange)">*</span></label>
+                      <input type="date" id="adult-dob" name="adult_dob" />
+                    </div>
+                    <div class="form-group">
+                      <label for="adult-age">Age</label>
+                      <input type="text" id="adult-age" name="adult_age" placeholder="Auto-calculated" readonly style="background:var(--color-surface-alt);cursor:default;" />
+                    </div>
+                  </div>
+
                   <div class="form-group">
-                    <label for="g-email">Guardian Email</label>
-                    <input type="email" id="g-email" name="guardian_email" autocomplete="email" placeholder="guardian@example.com" />
+                    <label for="adult-ssn">Social Security Number <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="adult-ssn" name="adult_ssn" placeholder="XXX-XX-XXXX" maxlength="11" autocomplete="off" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="adult-race">Race <span style="color:var(--orange)">*</span></label>
+                    <select id="adult-race" name="adult_race">
+                      <option value="" disabled selected>Select...</option>
+                      <option>American Indian or Alaska Native</option>
+                      <option>Asian</option>
+                      <option>Black or African American</option>
+                      <option>Native Hawaiian or Other Pacific Islander</option>
+                      <option>White</option>
+                      <option>Middle Eastern or North African</option>
+                      <option>Multiracial</option>
+                      <option>Other</option>
+                      <option>Prefer Not to Answer</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="adult-address">Address <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="adult-address" name="adult_address" autocomplete="street-address" placeholder="123 Main St, City, OH 44000" />
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="adult-phone">Phone Number <span style="color:var(--orange)">*</span></label>
+                      <input type="tel" id="adult-phone" name="adult_phone" autocomplete="tel" placeholder="(216) 555-0000" />
+                    </div>
+                    <div class="form-group">
+                      <label for="adult-email">Email Address <span style="color:var(--orange)">*</span></label>
+                      <input type="email" id="adult-email" name="adult_email" autocomplete="email" placeholder="you@example.com" />
+                    </div>
                   </div>
                 </div>
+                <!-- END ADULT FIELDS -->
 
-                <!-- REFERRAL -->
-                <p class="form-section-label" style="margin-top:var(--space-6)">Reason for Referral</p>
+                <!-- INSURANCE + REFERRING SOURCE (shown once type is selected) -->
+                <div id="insurance-fields" style="display:none">
 
-                <div class="form-group">
-                  <label for="p-reason">What kind of support are you looking for? <span style="color:var(--orange)">*</span></label>
-                  <textarea id="p-reason" name="reason" required rows="4" placeholder="Please describe what brings you to Upstar and what kind of support you are looking for..."></textarea>
+                  <p class="form-section-label" style="margin-top:var(--space-6)">Insurance Information</p>
+
+                  <div class="form-group">
+                    <label for="insurance-company">Insurance Company <span style="color:var(--orange)">*</span></label>
+                    <select id="insurance-company" name="insurance_company">
+                      <option value="" disabled selected>Select...</option>
+                      <optgroup label="Ohio Medicaid Plans">
+                        <option>AmeriHealth Caritas Ohio</option>
+                        <option>Anthem Blue Cross and Blue Shield Ohio Medicaid</option>
+                        <option>Buckeye Health Plan</option>
+                        <option>CareSource Ohio Medicaid</option>
+                        <option>Humana Healthy Horizons in Ohio</option>
+                        <option>Molina Healthcare of Ohio</option>
+                        <option>UnitedHealthcare Community Plan of Ohio</option>
+                      </optgroup>
+                      <optgroup label="Commercial / Other Plans">
+                        <option>Anthem Blue Cross and Blue Shield</option>
+                        <option>Buckeye Health Plan</option>
+                        <option>CareSource</option>
+                        <option>Molina Healthcare of Ohio</option>
+                        <option>Humana Healthy Horizons</option>
+                        <option>UnitedHealthcare Community Plan</option>
+                        <option>AmeriHealth Caritas Ohio</option>
+                      </optgroup>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="medicaid-num">Medicaid # <span style="color:var(--orange)">*</span></label>
+                      <input type="text" id="medicaid-num" name="medicaid_number" placeholder="Medicaid number" />
+                    </div>
+                    <div class="form-group">
+                      <label for="member-id">Member ID # <span style="color:var(--orange)">*</span></label>
+                      <input type="text" id="member-id" name="member_id" placeholder="Member ID" />
+                    </div>
+                  </div>
+
+                  <p class="form-section-label" style="margin-top:var(--space-6)">Referring Source</p>
+
+                  <div class="form-group">
+                    <label for="referring-source">Who is making this referral? <span style="color:var(--orange)">*</span></label>
+                    <select id="referring-source" name="referring_source">
+                      <option value="" disabled selected>Select...</option>
+                      <optgroup label="Family / Self">
+                        <option>Parent or Guardian</option>
+                        <option>Self Referral</option>
+                        <option>Family Member</option>
+                        <option>Friend</option>
+                      </optgroup>
+                      <optgroup label="School">
+                        <option value="School" data-show-name>School</option>
+                        <option value="Teacher" data-show-name>Teacher</option>
+                        <option value="School Counselor" data-show-name>School Counselor</option>
+                        <option value="School Social Worker" data-show-name>School Social Worker</option>
+                      </optgroup>
+                      <optgroup label="Medical / Clinical">
+                        <option value="Hospital" data-show-name>Hospital</option>
+                        <option value="Primary Care Physician" data-show-name>Primary Care Physician</option>
+                        <option value="Pediatrician" data-show-name>Pediatrician</option>
+                        <option value="Therapist" data-show-name>Therapist</option>
+                        <option value="Counselor" data-show-name>Counselor</option>
+                        <option value="Psychiatrist" data-show-name>Psychiatrist</option>
+                      </optgroup>
+                      <optgroup label="Social Services / Agency">
+                        <option value="Case Manager" data-show-name>Case Manager</option>
+                        <option value="Social Worker" data-show-name>Social Worker</option>
+                        <option value="OhioRISE Care Coordinator" data-show-name>OhioRISE Care Coordinator</option>
+                        <option value="County Agency" data-show-name>County Agency</option>
+                        <option value="Children Services" data-show-name>Children Services</option>
+                        <option value="Juvenile Court" data-show-name>Juvenile Court</option>
+                        <option value="Probation Officer" data-show-name>Probation Officer</option>
+                        <option value="Community Organization" data-show-name>Community Organization</option>
+                        <option value="Foster Agency" data-show-name>Foster Agency</option>
+                        <option value="Residential Facility" data-show-name>Residential Facility</option>
+                        <option value="Shelter" data-show-name>Shelter</option>
+                        <option value="Crisis Center" data-show-name>Crisis Center</option>
+                        <option value="Law Enforcement" data-show-name>Law Enforcement</option>
+                      </optgroup>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" id="referring-name-group" style="display:none;">
+                    <label for="referring-name">Referring Source Name <span style="color:var(--orange)">*</span></label>
+                    <input type="text" id="referring-name" name="referring_source_name" placeholder="Name of person or organization" />
+                  </div>
+
+                  <!-- Error message -->
+                  <div id="form-error" style="display:none;background:rgba(220,53,69,0.08);border:1px solid rgba(220,53,69,0.3);border-radius:8px;padding:var(--space-3) var(--space-4);color:#c0392b;font-size:var(--text-sm);margin-bottom:var(--space-4)">
+                    Something went wrong. Please try again or call us at <strong>(216) 352.3550</strong>.
+                  </div>
+
+                  <button type="submit" id="submit-btn" class="btn btn--green btn--lg" style="width:100%;margin-top:var(--space-2)">
+                    <span id="btn-label">Submit Referral</span>
+                    <svg id="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;animation:spin 0.8s linear infinite;margin-left:8px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  </button>
+                  <p class="form-note">This form is submitted securely. If you are in crisis, call or text <strong>988</strong> now.</p>
+
                 </div>
-
-                <!-- Error message -->
-                <div id="form-error" style="display:none;background:rgba(220,53,69,0.08);border:1px solid rgba(220,53,69,0.3);border-radius:8px;padding:var(--space-3) var(--space-4);color:#c0392b;font-size:var(--text-sm);margin-bottom:var(--space-4)">
-                  Something went wrong. Please try again or call us at <strong>(216) 352.3550</strong>.
-                </div>
-
-                <button type="submit" id="submit-btn" class="btn btn--green btn--lg" style="width:100%;margin-top:var(--space-2)">
-                  <span id="btn-label">Continue to Step 2</span>
-                  <svg id="btn-spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;animation:spin 0.8s linear infinite;margin-left:8px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-                </button>
-                <p class="form-note">Your basic info is safe with us. Step 2 will ask for Medicaid, date of birth, and other secure details. If you are in crisis, call or text <strong>988</strong> now.</p>
+                <!-- END INSURANCE + REFERRING SOURCE -->
 
               </form>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -227,6 +407,7 @@
           <a href="index.html">Home</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
           <a href="contact.html">Contact Us</a>
         </div>
         <div class="footer-col">
@@ -261,66 +442,151 @@
 
   <script src="js/main.js"></script>
   <script>
-    // API base: works locally and after deploy via port proxy
     const API = '__PORT_8000__'.startsWith('__') ? 'http://localhost:8000' : '__PORT_8000__';
 
-    const form = document.getElementById('referral-form-1');
-    const submitBtn = document.getElementById('submit-btn');
-    const btnLabel = document.getElementById('btn-label');
-    const btnSpinner = document.getElementById('btn-spinner');
-    const formError = document.getElementById('form-error');
+    const form        = document.getElementById('referral-form');
+    const submitBtn   = document.getElementById('submit-btn');
+    const btnLabel    = document.getElementById('btn-label');
+    const btnSpinner  = document.getElementById('btn-spinner');
+    const formError   = document.getElementById('form-error');
     const formSuccess = document.getElementById('form-success');
+    const childFields    = document.getElementById('child-fields');
+    const adultFields    = document.getElementById('adult-fields');
+    const insuranceFields = document.getElementById('insurance-fields');
 
+    // Referral type toggle
+    document.querySelectorAll('input[name="referral_type"]').forEach(radio => {
+      radio.addEventListener('change', function () {
+        const isChild = this.value === 'child';
+        childFields.style.display     = isChild ? 'block' : 'none';
+        adultFields.style.display     = isChild ? 'none'  : 'block';
+        insuranceFields.style.display = 'block';
+        toggleRequired(childFields, isChild);
+        toggleRequired(adultFields, !isChild);
+        document.getElementById('type-child-label').classList.toggle('type-card--active', isChild);
+        document.getElementById('type-adult-label').classList.toggle('type-card--active', !isChild);
+      });
+    });
+
+    function toggleRequired(section, on) {
+      section.querySelectorAll('input, select').forEach(el => {
+        if (el.readOnly) return;
+        const hasAsterisk = el.closest('.form-group')?.querySelector('label')?.innerHTML.includes('*');
+        if (hasAsterisk) el.required = on;
+      });
+    }
+
+    // SSN auto-format (XXX-XX-XXXX)
+    function formatSSN(input) {
+      input.addEventListener('input', function () {
+        let v = this.value.replace(/\D/g, '').substring(0, 9);
+        if (v.length > 5)      v = v.slice(0,3) + '-' + v.slice(3,5) + '-' + v.slice(5);
+        else if (v.length > 3) v = v.slice(0,3) + '-' + v.slice(3);
+        this.value = v;
+      });
+    }
+    formatSSN(document.getElementById('child-ssn'));
+    formatSSN(document.getElementById('adult-ssn'));
+
+    // Age auto-calculate
+    function calcAge(dobInput, ageInput) {
+      dobInput.addEventListener('change', function () {
+        if (!this.value) { ageInput.value = ''; return; }
+        const dob = new Date(this.value), today = new Date();
+        let age = today.getFullYear() - dob.getFullYear();
+        const m = today.getMonth() - dob.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
+        ageInput.value = age >= 0 ? age : '';
+      });
+    }
+    calcAge(document.getElementById('child-dob'), document.getElementById('child-age'));
+    calcAge(document.getElementById('adult-dob'), document.getElementById('adult-age'));
+
+    // Referring source name reveal
+    const refSelect    = document.getElementById('referring-source');
+    const refNameGroup = document.getElementById('referring-name-group');
+    const refNameInput = document.getElementById('referring-name');
+    refSelect.addEventListener('change', function () {
+      const showName = this.options[this.selectedIndex].hasAttribute('data-show-name');
+      refNameGroup.style.display = showName ? 'block' : 'none';
+      refNameInput.required = showName;
+      if (!showName) refNameInput.value = '';
+    });
+
+    // Submit
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       formError.style.display = 'none';
 
-      // Basic validation
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      const refType = form.referral_type?.value;
+      if (!refType) {
+        alert('Please select who this referral is for.');
         return;
       }
+      if (!form.checkValidity()) { form.reportValidity(); return; }
 
-      // Loading state
       submitBtn.disabled = true;
-      btnLabel.textContent = 'Sending...';
+      btnLabel.textContent = 'Submitting...';
       btnSpinner.style.display = 'inline-block';
 
-      const data = {
-        first_name: form.first_name.value.trim(),
-        last_name: form.last_name.value.trim(),
-        address: form.address.value.trim(),
-        phone: form.phone.value.trim(),
-        email: form.email.value.trim(),
-        guardian_name: form.guardian_name.value.trim(),
-        guardian_relationship: form.guardian_relationship.value,
-        guardian_phone: form.guardian_phone.value.trim(),
-        guardian_email: form.guardian_email.value.trim(),
-        reason: form.reason.value.trim()
+      let data = {
+        referral_type:         refType,
+        insurance_company:     form.insurance_company.value,
+        medicaid_number:       form.medicaid_number.value.trim(),
+        member_id:             form.member_id.value.trim(),
+        referring_source:      form.referring_source.value,
+        referring_source_name: form.referring_source_name.value.trim()
       };
 
-      try {
-        const res = await fetch(`${API}/api/referral`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+      if (refType === 'child') {
+        Object.assign(data, {
+          child_name:            form.child_name.value.trim(),
+          child_dob:             form.child_dob.value,
+          child_age:             form.child_age.value,
+          child_ssn:             form.child_ssn.value.trim(),
+          child_race:            form.child_race.value,
+          child_address:         form.child_address.value.trim(),
+          guardian_name:         form.guardian_name.value.trim(),
+          guardian_phone:        form.guardian_phone.value.trim(),
+          guardian_email:        form.guardian_email.value.trim(),
+          guardian_relationship: form.guardian_relationship.value
         });
+      } else {
+        Object.assign(data, {
+          adult_name:    form.adult_name.value.trim(),
+          adult_dob:     form.adult_dob.value,
+          adult_age:     form.adult_age.value,
+          adult_ssn:     form.adult_ssn.value.trim(),
+          adult_race:    form.adult_race.value,
+          adult_address: form.adult_address.value.trim(),
+          adult_phone:   form.adult_phone.value.trim(),
+          adult_email:   form.adult_email.value.trim()
+        });
+      }
 
-        if (res.ok) {
-          // Show success, hide form
+      var displayName = data.referral_type === 'child' ? data.child_name : data.adult_name;
+
+      try {
+        const res = await fetch('https://formspree.io/f/mrejyzqr', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'New Referral: ' + (displayName || 'Unnamed'),
+            ...data
+          })
+        });
+        const json = await res.json();
+        if (res.ok && json.ok) {
           form.style.display = 'none';
           formSuccess.style.display = 'block';
-          // Redirect to Step 2 after short delay
-          setTimeout(() => {
-            window.location.href = 'step2.html';
-          }, 1800);
         } else {
-          throw new Error('Server error');
+          formError.style.display = 'block';
         }
-      } catch (err) {
+      } catch(err) {
         formError.style.display = 'block';
+      } finally {
         submitBtn.disabled = false;
-        btnLabel.textContent = 'Continue to Step 2';
+        btnLabel.textContent = 'Submit Referral';
         btnSpinner.style.display = 'none';
       }
     });
@@ -329,61 +595,38 @@
   <style>
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    .step-indicator {
-      max-width: 320px;
-    }
-    .step-pill {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: var(--space-2) var(--space-4);
-      border-radius: 999px;
-      font-size: var(--text-sm);
-      font-weight: 600;
-      font-family: var(--font-display);
-      transition: all 0.2s;
-    }
-    .step-pill--active {
-      background: var(--navy);
-      color: #fff;
-    }
-    .step-pill--upcoming {
-      background: var(--color-surface-alt);
-      color: var(--color-text-muted);
-      border: 1.5px solid var(--color-border);
-    }
-    .step-pill__num {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-      background: rgba(255,255,255,0.2);
-      flex-shrink: 0;
-    }
-    .step-pill--upcoming .step-pill__num {
-      background: var(--color-border);
-      color: var(--color-text-muted);
-    }
-    .step-pill__line {
-      flex: 1;
-      height: 2px;
-      background: var(--color-border);
-      max-width: 48px;
-    }
     .form-section-label {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: var(--text-sm);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--navy);
-      margin-bottom: var(--space-4);
-      padding-bottom: var(--space-2);
+      font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm);
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy);
+      margin-bottom: var(--space-4); padding-bottom: var(--space-2);
       border-bottom: 2px solid var(--orange);
+    }
+
+    .referral-type-group {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);
+      margin-bottom: var(--space-2);
+    }
+    .type-card { cursor: pointer; }
+    .type-card input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .type-card__inner {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      padding: var(--space-4) var(--space-3); border-radius: 12px;
+      border: 2px solid var(--color-border); background: var(--color-surface);
+      transition: border-color 0.2s, background 0.2s; text-align: center;
+    }
+    .type-card__inner svg { color: var(--color-text-muted); transition: color 0.2s; }
+    .type-card__title { font-weight: 700; font-size: var(--text-base); font-family: var(--font-display); }
+    .type-card__sub   { font-size: var(--text-xs); color: var(--color-text-muted); }
+    .type-card:hover .type-card__inner  { border-color: var(--teal); }
+    .type-card--active .type-card__inner { border-color: var(--teal); background: rgba(27,153,139,0.07); }
+    .type-card--active .type-card__inner svg { color: var(--teal); }
+
+    #child-fields, #adult-fields, #insurance-fields, #referring-name-group {
+      animation: fadeIn 0.22s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 

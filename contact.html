@@ -36,6 +36,7 @@
       <a href="index.html" class="mobile-nav__link">Home</a>
       <a href="about.html" class="mobile-nav__link">About Us</a>
       <a href="services.html" class="mobile-nav__link">Services</a>
+      <a href="careers.html" class="mobile-nav__link">Careers</a>
       <a href="contact.html" class="mobile-nav__link">Contact</a>
       <div class="mobile-nav__ctas">
         <a href="start-services.html" class="btn btn--primary btn--lg">Start Services</a>
@@ -104,7 +105,7 @@
           <div data-anim>
             <div class="form-card">
               <h3>Send Us a Message</h3>
-              <form class="contact-form" novalidate>
+              <form class="contact-form" id="contact-form" novalidate>
                 <div class="form-row">
                   <div class="form-group">
                     <label for="first-name">First Name <span style="color:var(--orange)">*</span></label>
@@ -135,9 +136,66 @@
                   <label for="message">Your Message <span style="color:var(--orange)">*</span></label>
                   <textarea id="message" name="message" required rows="5" placeholder="How can we help you?"></textarea>
                 </div>
-                <button type="submit" class="btn btn--primary btn--lg" style="width:100%">Send Message</button>
+                <button type="submit" class="btn btn--primary btn--lg" id="contact-submit-btn" style="width:100%">Send Message</button>
+                <div id="contact-success" style="display:none;margin-top:16px;padding:16px;background:#e6fafc;border:1px solid #1b998b;border-radius:8px;color:#1b998b;font-weight:600;text-align:center">
+                  Your message was sent. We will get back to you within 1-2 business days.
+                </div>
+                <div id="contact-error" style="display:none;margin-top:16px;padding:16px;background:#fff5f5;border:1px solid #ff8552;border-radius:8px;color:#c0392b;text-align:center">
+                  Something went wrong. Please try again or email us directly at info@upstarmhs.com.
+                </div>
                 <p class="form-note">We aim to respond within 1-2 business days. For immediate help, please call or text 988.</p>
               </form>
+
+              <script>
+              (function() {
+                var form = document.getElementById('contact-form');
+                var btn  = document.getElementById('contact-submit-btn');
+                var successBox = document.getElementById('contact-success');
+                var errorBox   = document.getElementById('contact-error');
+
+                form.addEventListener('submit', async function(e) {
+                  e.preventDefault();
+                  if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                  }
+
+                  var firstName = form.querySelector('[name="first_name"]').value.trim();
+                  var lastName  = form.querySelector('[name="last_name"]').value.trim();
+
+                  btn.disabled = true;
+                  btn.textContent = 'Sending...';
+                  successBox.style.display = 'none';
+                  errorBox.style.display   = 'none';
+
+                  try {
+                    var res = await fetch('https://formspree.io/f/mrejyzqr', {
+                      method: 'POST',
+                      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        _subject: 'Website Message from ' + firstName + ' ' + lastName,
+                        name:    firstName + ' ' + lastName,
+                        email:   form.querySelector('[name="email"]').value.trim(),
+                        subject: form.querySelector('[name="subject"]').value,
+                        message: form.querySelector('[name="message"]').value.trim()
+                      })
+                    });
+                    var json = await res.json();
+                    if (res.ok && json.ok) {
+                      successBox.style.display = 'block';
+                      form.reset();
+                    } else {
+                      errorBox.style.display = 'block';
+                    }
+                  } catch(err) {
+                    errorBox.style.display = 'block';
+                  } finally {
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message';
+                  }
+                });
+              })();
+              </script>
             </div>
           </div>
         </div>
@@ -213,6 +271,7 @@
           <a href="index.html">Home</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Services</a>
+          <a href="careers.html">Careers</a>
           <a href="contact.html">Contact Us</a>
         </div>
         <div class="footer-col">

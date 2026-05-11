@@ -1041,3 +1041,86 @@ a.contact-item__value:hover { color: var(--orange); }
   color: var(--color-text-muted);
   max-width: 100%;
 }
+
+/* ============================================================
+   HIRING SECTION
+   ============================================================ */
+.hiring-section {
+  background: var(--color-surface-2);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.hiring-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .hiring-inner { grid-template-columns: 1fr; gap: var(--space-8); }
+}
+.hiring-text h2 {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+.hiring-text p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+.hiring-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.hiring-role-pill {
+  background: var(--green-light);
+  color: var(--green);
+  border: 1.5px solid rgba(27,153,139,0.25);
+  border-radius: 999px;
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+.hiring-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+.hiring-card__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--green-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+}
+.hiring-card h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-5);
+}
+.hiring-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.hiring-benefits li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+.badge--green {
+  background: var(--green);
+  color: #fff;
+}
