@@ -221,7 +221,7 @@ Screening and access processes are timely, person-centered, and designed to conn
 2. Minimize elapsed time between first contact, screening, and admission/referral.
 3. If urgent or critical needs are identified, take immediate action directly or via emergency referral.
 4. If services are not appropriate/available, provide warm referral to alternate resources.
-5. **[ENHANCEMENT]** Track access equity indicators (e.g., wait time by payer, geography, and language needs) with baseline measurement at policy implementation and at least quarterly reporting for continuous improvement.
+5. **[ENHANCEMENT]** Track access equity indicators (e.g., wait time by payer, geography, and language needs) with baseline measurement at policy implementation (using available historical data or an initial 90-day baseline period) and at least quarterly reporting for continuous improvement.
 
 **Required Records**
 - Screening and admission procedures
@@ -338,7 +338,7 @@ When services are delivered via telehealth/ICT, quality, privacy, safety, and id
 3. Confirm technology functionality and privacy conditions before and during services.
 4. Maintain contingency procedures for technology disruption and urgent safety response.
 5. Reassess appropriateness of ICT modality throughout care.
-6. **[ENHANCEMENT]** Require a documented backup communication method (e.g., phone) before each ICT session, using this order of documentation preference: encounter note, designated telehealth workflow field, or (if no EHR field exists) a standardized telehealth session checklist retained with quality records.
+6. **[ENHANCEMENT]** Require a documented backup communication method (e.g., phone) before each ICT session. Document this using the first available option: (1) encounter note, (2) designated telehealth workflow field, or (3) standardized telehealth session checklist retained with quality records if no EHR field exists.
 
 **Required Records**
 - ICT consent documentation
