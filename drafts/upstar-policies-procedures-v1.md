@@ -335,7 +335,7 @@ When services are delivered via telehealth/ICT, quality, privacy, safety, and id
 3. Confirm technology functionality and privacy conditions before and during services.
 4. Maintain contingency procedures for technology disruption and urgent safety response.
 5. Reassess appropriateness of ICT modality throughout care.
-6. **[ENHANCEMENT]** Require a documented backup communication method (e.g., phone) before each ICT session, recorded in the encounter note or designated telehealth workflow field.
+6. **[ENHANCEMENT]** Require a documented backup communication method (e.g., phone) before each ICT session, recorded in the encounter note, designated telehealth workflow field, or (if no EHR field exists) a standardized telehealth session checklist retained with quality records.
 
 **Required Records**
 - ICT consent documentation

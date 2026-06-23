@@ -2,7 +2,7 @@
 
 | Decision needed | Recommended default | Impact if deferred |
 |---|---|---|
-| Final policy effective date and rollout sequence | Approve manual within 30 days, then phase implementation over 60 days | Inconsistent adoption across programs |
+| Final policy effective date and rollout sequence | Approve manual within 30 days (including board/legal review steps), then phase implementation over 60 days | Inconsistent adoption across programs |
 | Which governance model applies (formal board governance standards vs leadership-only model) | Apply governance practices in this draft; formal board governance review quarterly | Unclear accountability boundaries |
 | Ohio legal citation set to embed in compliance section | Keep placeholders and complete legal review before final issuance | Compliance ambiguity for audits/contracts |
 | Standard timeframe for access-to-care targets (first contact to intake/first appointment) | Set initial benchmarks by service line and review monthly | Variable access performance and equity blind spots |
