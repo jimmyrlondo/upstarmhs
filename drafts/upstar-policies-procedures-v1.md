@@ -195,7 +195,7 @@ Upstar uses measurement and improvement cycles to strengthen outcomes, access, s
 Each program has a clear scope, defined eligibility parameters, and resources needed for safe and effective service delivery.
 
 **Procedures**
-1. Document program scope (populations, settings, hours, referral sources, payer/funding, services offered, ICT modalities when used).
+1. Document program scope (populations, settings, hours, referral sources, payer/funding, services offered, information and communication technologies [ICT] modalities when used).
 2. Define and publish entry, transition, and exit criteria.
 3. Review and update program scope at least annually.
 4. Ensure staffing model and operational resources match program commitments.
