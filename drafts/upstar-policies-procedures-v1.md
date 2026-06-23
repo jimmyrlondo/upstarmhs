@@ -161,7 +161,10 @@ Upstar removes barriers to access for persons served, workforce, and stakeholder
 2. Provide language and communication accommodations as needed.
 3. Integrate accessibility actions into planning and improvement work.
 4. Track accommodation requests, response times, and unresolved barriers.
-5. **[ENHANCEMENT]** Use plain-language and culturally responsive communication standards across all service materials, including materials targeted to approximately an 8th-grade reading level, interpreter/translation access when needed, and annual cultural-competency refresher expectations for relevant roles.
+5. **[ENHANCEMENT]** Use plain-language and culturally responsive communication standards across all service materials.
+   - 5a. Target person-facing materials to approximately an 8th-grade reading level.
+   - 5b. Provide interpreter/translation access when needed.
+   - 5c. Require annual cultural-competency refresher expectations for relevant roles.
 
 **Required Records**
 - Accessibility assessment and action plan
@@ -218,7 +221,7 @@ Screening and access processes are timely, person-centered, and designed to conn
 2. Minimize elapsed time between first contact, screening, and admission/referral.
 3. If urgent or critical needs are identified, take immediate action directly or via emergency referral.
 4. If services are not appropriate/available, provide warm referral to alternate resources.
-5. **[ENHANCEMENT]** Track access equity indicators (e.g., wait time by payer, geography, and language needs) with baseline measurement at implementation and at least quarterly reporting for continuous improvement.
+5. **[ENHANCEMENT]** Track access equity indicators (e.g., wait time by payer, geography, and language needs) with baseline measurement at policy implementation and at least quarterly reporting for continuous improvement.
 
 **Required Records**
 - Screening and admission procedures
@@ -335,7 +338,7 @@ When services are delivered via telehealth/ICT, quality, privacy, safety, and id
 3. Confirm technology functionality and privacy conditions before and during services.
 4. Maintain contingency procedures for technology disruption and urgent safety response.
 5. Reassess appropriateness of ICT modality throughout care.
-6. **[ENHANCEMENT]** Require a documented backup communication method (e.g., phone) before each ICT session, recorded in the encounter note, designated telehealth workflow field, or (if no EHR field exists) a standardized telehealth session checklist retained with quality records.
+6. **[ENHANCEMENT]** Require a documented backup communication method (e.g., phone) before each ICT session, using this order of documentation preference: encounter note, designated telehealth workflow field, or (if no EHR field exists) a standardized telehealth session checklist retained with quality records.
 
 **Required Records**
 - ICT consent documentation
