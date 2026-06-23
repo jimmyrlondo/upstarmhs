@@ -162,9 +162,9 @@ Upstar removes barriers to access for persons served, workforce, and stakeholder
 3. Integrate accessibility actions into planning and improvement work.
 4. Track accommodation requests, response times, and unresolved barriers.
 5. **[ENHANCEMENT]** Use plain-language and culturally responsive communication standards across all service materials.
-   - 5a. Target person-facing materials to approximately an 8th-grade reading level.
-   - 5b. Provide interpreter/translation access when needed.
-   - 5c. Require annual cultural-competency refresher expectations for relevant roles.
+   - 1. Target person-facing materials to approximately an 8th-grade reading level.
+   - 2. Provide interpreter/translation access when needed.
+   - 3. Require annual cultural-competency refresher expectations for relevant roles.
 
 **Required Records**
 - Accessibility assessment and action plan
