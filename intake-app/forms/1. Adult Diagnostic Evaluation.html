@@ -5,7 +5,7 @@
     <script>
     (function() {
         try {
-            const saved = localStorage.getItem('wchc_user_preferences');
+            const saved = localStorage.getItem('upstar_user_preferences');
             if (saved) {
                 const prefs = JSON.parse(saved);
                 if (prefs.highContrast) {
@@ -696,7 +696,7 @@ html.high-contrast-mode textarea:disabled {
     </style>
     <!-- Load User Preferences -->
     <script src="../js/shared-preferences.js"></script>
-    <script>window.WATSON_AUTH_CONFIG={mode:'protect',loginPath:'../index.html'};</script>
+    <script>window.UPSTAR_AUTH_CONFIG={mode:'protect',loginPath:'../index.html'};</script>
     <script src="../js/auth-gate.js"></script>
 </head>
 <body>
@@ -737,10 +737,10 @@ html.high-contrast-mode textarea:disabled {
     </div>
 
     <div class="form-container">
-        <h1 class="text-4xl font-bold text-center text-gray-900 mb-2">Watson Community Health</h1>
+        <h1 class="text-4xl font-bold text-center text-gray-900 mb-2">Upstar Mental Health Services</h1>
         <h2 class="text-2xl font-medium text-center text-gray-600 mb-8">Adult Diagnostic Evaluation and Psychosocial Assessment</h2>
         
-        <p class="text-gray-700 text-center mb-10">Welcome to Watson Community Health. This form is designed to help us understand your needs and connect you with the right care team member. Please fill out the sections below to the best of your ability.</p>
+        <p class="text-gray-700 text-center mb-10">Welcome to Upstar Mental Health Services. This form is designed to help us understand your needs and connect you with the right care team member. Please fill out the sections below to the best of your ability.</p>
 
         <form id="intakeForm" onsubmit="return false;">
             <div id="section-1" class="mb-6">

@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="../images/goldlogo.png">
-    <meta name="description" content="Substance Use Disorder Assessment and ASAM Level of Care form for Watson Community Health Center. Save, export, and print legally binding clinical documents securely and accessibly.">
-    <meta property="og:title" content="Substance Use Disorder Assessment - Watson Community Health Center">
+    <meta name="description" content="Substance Use Disorder Assessment and ASAM Level of Care form for Upstar Mental Health Services. Save, export, and print legally binding clinical documents securely and accessibly.">
+    <meta property="og:title" content="Substance Use Disorder Assessment - Upstar Mental Health Services">
     <meta property="og:description" content="Comprehensive SUD assessment form with save/export/print features for clinical use.">
     <meta property="og:image" content="../images/goldlogo.png">
     <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
         // ==================== PREFERENCE LOADING (INLINE - RUNS BEFORE PAGE RENDERS) ====================
         (function() {
             try {
-                const prefs = JSON.parse(localStorage.getItem('wchc_user_preferences') || '{}');
+                const prefs = JSON.parse(localStorage.getItem('upstar_user_preferences') || '{}');
                 
                 // Apply high contrast mode immediately
                 if (prefs.highContrast === true) {
@@ -234,7 +234,7 @@
             border: 1px solid #FFFF00 !important;
         }
     </style>
-    <script>window.WATSON_AUTH_CONFIG={mode:'protect',loginPath:'../index.html'};</script>
+    <script>window.UPSTAR_AUTH_CONFIG={mode:'protect',loginPath:'../index.html'};</script>
     <script src="../js/auth-gate.js"></script>
 </head>
 <body>
@@ -247,7 +247,7 @@
         <nav id="form-nav" aria-label="Section links"></nav>
     </div>
     <div id="main-content" class="form-container" role="main" tabindex="-1">
-        <h1 class="text-3xl font-bold text-center text-gray-900 mb-2">Watson Community Health Centre</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-900 mb-2">Upstar Mental Health Services</h1>
         <h2 class="text-xl font-medium text-center text-gray-600 mb-8">Substance Use Disorder Assessment and ASAM Level of Care</h2>
                 <form id="sudaForm" onsubmit="return false;" aria-label="Substance Use Disorder Assessment Form">
             <input type="hidden" id="formId" value="suda-v1">

@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="../images/goldlogo.png">
-    <meta name="description" content="Prior Authorization Request form for Watson Community Health Center.">
-    <meta property="og:title" content="Prior Authorization Request - Watson Community Health Center">
+    <meta name="description" content="Prior Authorization Request form for Upstar Mental Health Services.">
+    <meta property="og:title" content="Prior Authorization Request - Upstar Mental Health Services">
     <meta property="og:description" content="Request additional services using a secure, accessible prior authorization form.">
     <meta property="og:image" content="../images/logo.png">
     <meta property="og:type" content="website">
@@ -46,7 +46,7 @@
         }
         @media (min-width: 1024px) { .nav-container { display: block; } .form-container { margin-left: 280px; } }
     </style>
-    <script>window.WATSON_AUTH_CONFIG={mode:'protect',loginPath:'../index.html'};</script>
+    <script>window.UPSTAR_AUTH_CONFIG={mode:'protect',loginPath:'../index.html'};</script>
     <script src="../js/auth-gate.js"></script>
 </head>
 <body>
@@ -64,7 +64,7 @@
 
             <div class="text-center mb-8">
                 <h1 class="text-3xl font-bold text-gray-800">Prior Authorization Request</h1>
-                <p class="text-gray-500">Watson Community Health Center</p>
+                <p class="text-gray-500">Upstar Mental Health Services</p>
             </div>
 
             <div id="section-1" class="mb-6">
@@ -374,7 +374,7 @@
                     .signature-label{font-size:8pt;color:#555}
                 </style>
             </head><body><div class="page-content">
-                <div class="header"><img src="${escapeHtml(logoSrc)}" alt="Watson Community Health Center Logo" class="logo"><div class="header-title"><h1>${escapeHtml(FORM_NAME_PRINT)}</h1><h2>Watson Community Health Center</h2></div></div>
+                <div class="header"><img src="${escapeHtml(logoSrc)}" alt="Upstar Mental Health Services Logo" class="logo"><div class="header-title"><h1>${escapeHtml(FORM_NAME_PRINT)}</h1><h2>Upstar Mental Health Services</h2></div></div>
                 <h3 class="section-title">Basic Demographics</h3>
                 <div class="grid-4col">
                     ${createField('Request Date', escapeHtml(formatDateForDisplay(getValue('requestDate'))))}

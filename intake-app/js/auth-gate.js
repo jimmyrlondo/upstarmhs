@@ -1,12 +1,12 @@
-// Temporary client-side login gate for Watson testing only.
+// Temporary client-side login gate for Upstar Mental Health Services testing only.
 // This is not secure and must be replaced with real server-side or hosting-level auth before any sensitive production use.
 (function() {
     'use strict';
 
-    const CONFIG = window.WATSON_AUTH_CONFIG || {};
-    const STORAGE_KEY = 'watson_temp_access_v1';
-    const TEST_USERNAME = 'watson';
-    const TEST_PASSWORD = 'W@t50n!';
+    const CONFIG = window.UPSTAR_AUTH_CONFIG || {};
+    const STORAGE_KEY = 'upstar_temp_access_v1';
+    const TEST_USERNAME = 'upstarmhs';
+    const TEST_PASSWORD = 'Up5t@r2026!';
 
     function hasAccess() {
         try {
@@ -15,7 +15,7 @@
             const parsed = JSON.parse(saved);
             return parsed && parsed.authenticated === true;
         } catch (error) {
-            console.error('Could not read Watson access state:', error);
+            console.error('Could not read Upstar access state:', error);
             return false;
         }
     }
@@ -57,14 +57,14 @@
     }
 
     function addLogoutButton() {
-        if (document.querySelector('[data-watson-logout]')) {
+        if (document.querySelector('[data-upstar-logout]')) {
             return;
         }
 
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = 'Log out';
-        button.setAttribute('data-watson-logout', 'true');
+        button.setAttribute('data-upstar-logout', 'true');
         button.style.cssText = [
             'position:fixed',
             'top:16px',
@@ -73,10 +73,10 @@
             'padding:10px 14px',
             'border:none',
             'border-radius:999px',
-            'background:#0f766e',
+            'background:#1d4ed8',
             'color:#ffffff',
             'font:600 14px/1.2 system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif',
-            'box-shadow:0 10px 25px rgba(15,118,110,0.22)',
+            'box-shadow:0 10px 25px rgba(29,78,216,0.22)',
             'cursor:pointer'
         ].join(';');
         button.addEventListener('click', function() {
@@ -114,10 +114,10 @@
             return;
         }
 
-        const form = document.getElementById('watson-login-form');
-        const usernameInput = document.getElementById('watson-username');
-        const passwordInput = document.getElementById('watson-password');
-        const errorBox = document.getElementById('watson-login-error');
+        const form = document.getElementById('upstar-login-form');
+        const usernameInput = document.getElementById('upstar-username');
+        const passwordInput = document.getElementById('upstar-password');
+        const errorBox = document.getElementById('upstar-login-error');
 
         if (!form || !usernameInput || !passwordInput || !errorBox) {
             return;
