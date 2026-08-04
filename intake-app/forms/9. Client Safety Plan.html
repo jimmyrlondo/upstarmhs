@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="../images/goldlogo.png">
-    <meta name="description" content="Client Safety Plan form for Watson Community Health Center. Accessible, print-friendly, and legally compliant.">
-    <meta property="og:title" content="Client Safety Plan - Watson Community Health Center">
+    <meta name="description" content="Client Safety Plan form for Upstar Mental Health Services. Accessible, print-friendly, and legally compliant.">
+    <meta property="og:title" content="Client Safety Plan - Upstar Mental Health Services">
     <meta property="og:description" content="Professional, secure, and accessible Client Safety Plan form.">
-    <meta property="og:image" content="../images/logo.png">
+    <meta property="og:image" content="../images/goldlogo.png">
     <meta property="og:type" content="website">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
@@ -71,7 +71,7 @@
                             <input type="date" id="dateOfPlan" name="date" class="form-input">
                         </div>
                         <div>
-                            <label for="staffName" class="form-label">WCHC Staff</label>
+                            <label for="staffName" class="form-label">Upstar Staff</label>
                             <input type="text" id="staffName" name="staffName" class="form-input">
                         </div>
                         <div>
@@ -302,7 +302,7 @@
                 <h3 class="section-title">Client Information</h3>
                 <div class="grid-print-3">
                     ${createField('Date', formatDate(getValue('date')))}
-                    ${createField('WCHC Staff', getValue('staffName'))}
+                    ${createField('Upstar Staff', getValue('staffName'))}
                     ${createField('Supervisor', getValue('supervisorName'))}
                     ${createField('Client', getValue('clientName'))}
                     ${createField('DOB', formatDate(getValue('dob')))}
@@ -372,7 +372,7 @@
                         </div>
                         <div>
                             <div class="sig-line"></div>
-                            <div class="sig-label">WCHC Staff: ${getValue('sig_staff_name')} - Date: ${formatDate(getValue('sig_staff_date'))}</div>
+                            <div class="sig-label">Upstar Staff: ${getValue('sig_staff_name')} - Date: ${formatDate(getValue('sig_staff_date'))}</div>
                         </div>
                         ${includeSupervisor ? `
                         <div>
@@ -629,7 +629,7 @@
             medContainer.appendChild(input);
         }
         const supportsContainer = document.getElementById('emergency-supports-list');
-        const supports = ["Local Police", "WCHC Staff", "WCHC Staff ", "Crisis Number", "Family Identified Emergency Support", "Family Identified Emergency Support "];
+        const supports = ["Local Police", "Upstar Staff", "Upstar Staff ", "Crisis Number", "Family Identified Emergency Support", "Family Identified Emergency Support "];
         supports.forEach((support, i) => {
             const div = document.createElement('div');
             div.innerHTML = `<label for="support_contact_${i}" class="form-label">${support}</label><input type="text" id="support_contact_${i}" name="support_contact_${i}" class="form-input">`;
@@ -651,7 +651,7 @@
         const roles = [
             { title: 'Client', name: 'sig_client' },
             { title: 'Parent/Guardian', name: 'sig_guardian' },
-            { title: 'WCHC Staff', name: 'sig_staff' }
+            { title: 'Upstar Staff', name: 'sig_staff' }
         ];
         roles.forEach(role => {
             const div = document.createElement('div');

@@ -2,7 +2,7 @@
 (function() {
     'use strict';
     
-    const PREFS_KEY = 'wchc_user_preferences';
+    const PREFS_KEY = 'upstar_user_preferences';
     const DEFAULT_PREFS = {
         fontSize: 16,
         lineSpacing: 1.5,
