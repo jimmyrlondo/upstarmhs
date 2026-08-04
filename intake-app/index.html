@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watson Test Access | Londo Technologies</title>
+    <title>Upstar Mental Health Services | Intake Portal</title>
     <link rel="icon" type="image/png" href="images/goldlogo.png">
-    <script>window.WATSON_AUTH_CONFIG={mode:'login',successPath:'app.html'};</script>
+    <script>window.UPSTAR_AUTH_CONFIG={mode:'login',successPath:'app.html'};</script>
     <script src="js/auth-gate.js" defer></script>
     <style>
         :root {
             color-scheme: light;
-            --teal: #0f766e;
-            --teal-dark: #115e59;
-            --ink: #1f2937;
-            --muted: #6b7280;
-            --line: #d6d3d1;
-            --paper: #f8fafc;
-            --card: #ffffff;
-            --danger: #b91c1c;
+            --blue:        #1d4ed8;
+            --blue-dark:   #1e3a8a;
+            --blue-light:  #dbeafe;
+            --orange:      #ea580c;
+            --orange-dark: #c2410c;
+            --yellow:      #fbbf24;
+            --yellow-bg:   #fffbeb;
+            --ink:         #1f2937;
+            --muted:       #6b7280;
+            --line:        #d1d5db;
+            --paper:       #f0f4ff;
+            --card:        #ffffff;
+            --danger:      #b91c1c;
         }
         * { box-sizing: border-box; }
         body {
@@ -25,125 +30,156 @@
             min-height: 100vh;
             font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             color: var(--ink);
-            background: linear-gradient(135deg, #f8fafc, #ecfeff);
+            background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
         }
         .shell {
-            width: min(960px, 100%);
+            width: min(980px, 100%);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             overflow: hidden;
             border-radius: 24px;
             background: var(--card);
-            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+            box-shadow: 0 24px 64px rgba(29, 78, 216, 0.18);
         }
-        .intro, .panel { padding: 40px; }
+        .intro, .panel { padding: 44px; }
         .intro {
-            background: linear-gradient(180deg, rgba(15,118,110,0.96), rgba(17,94,89,0.96));
+            background: linear-gradient(160deg, var(--blue) 0%, var(--blue-dark) 100%);
             color: #fff;
         }
-        .intro img { width: 88px; max-width: 100%; margin-bottom: 20px; }
+        .intro img { width: 80px; max-width: 100%; margin-bottom: 22px; }
         .eyebrow {
             display: inline-block;
-            font-size: 12px;
-            letter-spacing: 0.08em;
+            font-size: 11px;
+            letter-spacing: 0.10em;
             text-transform: uppercase;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 999px;
-            background: rgba(255,255,255,0.14);
-            margin-bottom: 18px;
-        }
-        h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 2.6rem); line-height: 1.05; }
-        p { line-height: 1.6; }
-        .panel { background: var(--card); }
-        .panel h2 { margin-top: 0; font-size: 1.6rem; }
-        .note {
-            border: 1px solid #fbbf24;
-            background: #fffbeb;
-            color: #92400e;
-            border-radius: 16px;
-            padding: 14px 16px;
+            background: rgba(251,191,36,0.22);
+            color: var(--yellow);
+            font-weight: 700;
             margin-bottom: 20px;
-            font-size: 0.95rem;
         }
-        form { display: grid; gap: 14px; }
-        label { font-weight: 600; font-size: 0.95rem; }
+        h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.08; }
+        .tagline { line-height: 1.65; color: rgba(255,255,255,0.85); }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+        .badge {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .panel { background: var(--card); }
+        .panel h2 { margin: 0 0 6px; font-size: 1.55rem; color: var(--ink); }
+        .panel .sub { color: var(--muted); font-size: 0.93rem; margin-bottom: 24px; }
+        .note {
+            border: 1px solid var(--yellow);
+            background: var(--yellow-bg);
+            color: #92400e;
+            border-radius: 14px;
+            padding: 13px 16px;
+            margin-bottom: 22px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        form { display: grid; gap: 16px; }
+        label { font-weight: 600; font-size: 0.93rem; color: var(--ink); }
         input {
+            display: block;
             width: 100%;
             margin-top: 6px;
-            border: 1px solid var(--line);
+            border: 1.5px solid var(--line);
             border-radius: 12px;
             padding: 14px 16px;
             font: inherit;
+            color: var(--ink);
+            transition: border-color 0.15s, box-shadow 0.15s;
         }
         input:focus {
-            outline: 3px solid rgba(15,118,110,0.18);
-            border-color: var(--teal);
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(29,78,216,0.14);
         }
-        button {
+        button[type="submit"] {
             border: none;
             border-radius: 999px;
-            padding: 14px 18px;
-            background: var(--teal);
+            padding: 15px 20px;
+            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%);
             color: #fff;
             font: 700 1rem/1.2 inherit;
             cursor: pointer;
+            letter-spacing: 0.02em;
+            transition: opacity 0.15s, transform 0.1s;
+            box-shadow: 0 4px 16px rgba(234,88,12,0.30);
         }
-        button:hover { background: var(--teal-dark); }
+        button[type="submit"]:hover { opacity: 0.92; transform: translateY(-1px); }
+        button[type="submit"]:active { opacity: 1; transform: none; }
         .error {
             border-radius: 12px;
             padding: 12px 14px;
             background: #fef2f2;
             color: var(--danger);
             border: 1px solid #fecaca;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            font-size: 0.93rem;
         }
         .links {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-top: 22px;
+            margin-top: 24px;
         }
         .links a {
-            color: var(--teal);
+            color: var(--blue);
             font-weight: 600;
             text-decoration: none;
+            font-size: 0.9rem;
         }
-        .small { color: var(--muted); font-size: 0.92rem; }
+        .links a:hover { text-decoration: underline; }
+        .small { color: var(--muted); font-size: 0.88rem; margin-top: 6px; }
     </style>
 </head>
 <body>
-    <!-- Temporary client-side test gate only. Replace with real auth before any production-sensitive use. -->
+    <!-- Temporary client-side access gate only. Replace with real auth before any production-sensitive use. -->
     <main class="shell">
         <section class="intro">
-            <span class="eyebrow">Watson test area</span>
-            <img src="images/logo.png" alt="Watson Community Health Center logo">
-            <h1>Watson Forms Portal</h1>
-            <p>Use the temporary test login to reach the Watson form library hosted under <strong>/watson/</strong> on this GitHub Pages site.</p>
-            <p class="small">This gate is only intended to prevent casual access during testing. It is client-side only and is <strong>not secure enough</strong> for sensitive production use.</p>
+            <span class="eyebrow">Secure Intake Portal</span>
+            <img src="images/logo.png" alt="Upstar Mental Health Services logo">
+            <h1>Upstar Mental Health Services</h1>
+            <p class="tagline">Welcome to the secure clinical intake and forms portal. Please sign in with your provided credentials to access the form library.</p>
+            <div class="badge-row">
+                <span class="badge">&#128274; Secure Access</span>
+                <span class="badge">&#129657; HIPAA Aware</span>
+                <span class="badge">&#9989; Clinical Forms</span>
+            </div>
         </section>
         <section class="panel">
             <h2>Sign in to continue</h2>
-            <div class="note">Temporary testing login only — this can be inspected or bypassed by someone with browser access, so it should be replaced later with real authentication.</div>
-            <div id="watson-login-error" class="error" hidden>Incorrect username or password. Please try again.</div>
-            <form id="watson-login-form">
+            <p class="sub">Enter your Upstar credentials below to access the portal.</p>
+            <div class="note">This gate is intended to prevent casual access. It is client-side only and should be replaced with server-side authentication for production use.</div>
+            <div id="upstar-login-error" class="error" hidden>Incorrect username or password. Please try again.</div>
+            <form id="upstar-login-form">
                 <label>
                     Username
-                    <input id="watson-username" name="username" type="text" autocomplete="username" required>
+                    <input id="upstar-username" name="username" type="text" autocomplete="username" required placeholder="Enter username">
                 </label>
                 <label>
                     Password
-                    <input id="watson-password" name="password" type="password" autocomplete="current-password" required>
+                    <input id="upstar-password" name="password" type="password" autocomplete="current-password" required placeholder="Enter password">
                 </label>
-                <button type="submit">Enter Watson</button>
+                <button type="submit">Sign In to Upstar Portal</button>
             </form>
             <div class="links">
-                <a href="/">← Back to londo.tech</a>
+                <a href="/">&#8592; Back to londo.tech</a>
                 <a href="app.html">View portal after login</a>
             </div>
+            <p class="small">Upstar Mental Health Services &mdash; Powered by Londo Technologies</p>
         </section>
     </main>
 </body>
