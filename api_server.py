@@ -2,7 +2,7 @@
 """
 Upstar MHS API Server
 Email routing:
-  - Start Services referral  -> ADMIN_EMAIL + INTAKE_EMAIL
+  - Start Services referral  -> ADMIN_EMAIL + INTAKE_EMAILS
   - Careers application      -> ADMIN_EMAIL only
   - Contact form             -> ADMIN_EMAIL only
 """
@@ -25,7 +25,7 @@ app.add_middleware(
 )
 
 ADMIN_EMAIL  = "a.nicole@upstarmhs.com"   # receives ALL form submissions
-INTAKE_EMAIL = "s.hairston@upstarmhs.com"  # also receives Start Services referrals
+INTAKE_EMAILS = ["s.hairston@upstarmhs.com", "e.kefover@upstarmhs.com"]  # also receive Start Services referrals
 INFO_EMAIL   = "info@upstarmhs.com"
 
 
@@ -193,7 +193,7 @@ Submitted via the Upstar MHS website.
     await call_tool("gcal", "send_email", {
         "action": {
             "action": "send",
-            "to": [ADMIN_EMAIL, INTAKE_EMAIL],
+            "to": [ADMIN_EMAIL, *INTAKE_EMAILS],
             "cc": [],
             "bcc": [],
             "subject": f"New {referral_label}: {display_name}",
