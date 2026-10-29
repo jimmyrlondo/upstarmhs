@@ -1220,3 +1220,33 @@ a.contact-item__value:hover { color: var(--orange); }
   .cta-actions { flex-shrink: 1; width: 100%; }
   .cta-actions .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
 }
+
+/* ---- CARF ---- */
+.footer-carf {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  color: rgba(255,255,255,0.8);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.footer-carf img { width: 64px; height: 64px; }
+.footer-carf:hover span { color: #fff; }
+.accred-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+.accred-card__seal { flex-shrink: 0; }
+.accred-card__seal img { width: 108px; height: 108px; display: block; }
+.accred-card h2 { margin: var(--space-3) 0; }
+@media (max-width: 600px) {
+  .accred-card { flex-direction: column; text-align: center; padding: var(--space-6) var(--space-5); }
+}
