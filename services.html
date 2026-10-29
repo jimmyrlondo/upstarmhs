@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Upstar Mental Health Services</title>
-  <meta name="description" content="Explore Upstar's full range of mental health services: individual and family therapy, SUD counseling, OhioRISE, case management, school-based services, CPST, and peer support." />
+  <meta name="description" content="Explore Upstar's full range of mental health services: individual and family therapy, SUD counseling, case management, OhioRISE respite, school-based services, CPST, TBS, and peer support." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -26,6 +26,7 @@
       </nav>
       <div class="header-actions">
         <button data-theme-toggle aria-label="Toggle dark mode" class="theme-btn"></button>
+        <a href="start-services.html#referral-form" class="btn btn--secondary header-refer">Refer a Client</a>
         <a href="start-services.html" class="btn btn--primary">Start Services</a>
         <button data-menu-toggle aria-label="Open menu" aria-expanded="false" class="menu-btn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -40,6 +41,7 @@
       <a href="contact.html" class="mobile-nav__link">Contact</a>
       <div class="mobile-nav__ctas">
         <a href="start-services.html" class="btn btn--primary btn--lg">Start Services</a>
+        <a href="start-services.html#referral-form" class="btn btn--navy btn--lg">Refer a Client</a>
         <a href="contact.html#ask" class="btn btn--secondary btn--lg">Ask a Question</a>
       </div>
     </nav>
@@ -54,12 +56,29 @@
       </div>
     </section>
 
+    <!-- SERVICE JUMP NAV -->
+    <section class="service-jump-wrap">
+      <div class="container container--narrow">
+        <p class="service-jump__label">Jump to a service</p>
+        <nav class="service-jump" aria-label="Services on this page">
+          <a href="#therapy">Therapy</a>
+          <a href="#sud">SUD Counseling</a>
+          <a href="#case-management">Case Management</a>
+          <a href="#ohiorise-respite">OhioRISE Respite</a>
+          <a href="#school-based">School-Based</a>
+          <a href="#cpst">CPST</a>
+          <a href="#tbs">TBS</a>
+          <a href="#peer-support">Peer Support</a>
+        </nav>
+      </div>
+    </section>
+
     <!-- SERVICES DETAIL -->
     <section class="section">
       <div class="container container--narrow">
         <div class="services-detail">
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="therapy" data-anim>
             <span class="service-num">01</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
@@ -69,12 +88,13 @@
                 <span class="badge badge--navy">Therapy</span>
               </div>
               <h3>Individual &amp; Family Group Therapy</h3>
+              <p class="service-bestfor">Best for: children, teens, adults, and families who want to work on things like anxiety, depression, trauma, or behavior with a therapist.</p>
               <p>Our team of qualified therapists meets with clients to understand their requirements and establish goals aimed at reducing or enhancing mental health symptoms. The most effective therapeutic modality is determined by the therapist, who then develops a personalized plan.</p>
               <p>Services are delivered through individual therapy sessions, group therapy sessions, or interactions with the complete family or support network to best support your healing journey.</p>
             </div>
           </div>
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="sud" data-anim>
             <span class="service-num">02</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
@@ -84,11 +104,12 @@
                 <span class="badge badge--orange">SUD</span>
               </div>
               <h3>Chemical Dependency Counseling &amp; SUD Case Management</h3>
+              <p class="service-bestfor">Best for: anyone working toward recovery from alcohol or drug use.</p>
               <p>Our substance use disorder (SUD) counseling and case management services provide structured, evidence-based support for individuals navigating chemical dependency and recovery. We address both the clinical and practical dimensions of recovery helping clients build lasting wellness.</p>
             </div>
           </div>
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="case-management" data-anim>
             <span class="service-num">03</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
@@ -98,6 +119,7 @@
                 <span class="badge badge--green">Case Management</span>
               </div>
               <h3>Case Management Services</h3>
+              <p class="service-bestfor">Best for: clients who need hands-on help with housing, benefits, ID, school, or work alongside their treatment.</p>
               <p>Our qualified behavioral health specialists engage with clients in a community environment to enhance their personal and social functioning. We give our clients the tools and resources they need to live more productive, independent lives via advocacy and support.</p>
               <p>Case managers work together with the client and therapist to create a thorough treatment plan that addresses all requirements and goals. Services include:</p>
               <ul>
@@ -119,7 +141,7 @@
             </div>
           </div>
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="ohiorise-respite" data-anim>
             <span class="service-num">04</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
@@ -128,12 +150,14 @@
                 </div>
                 <span class="badge badge--yellow">OhioRISE</span>
               </div>
-              <h3>OhioRISE Services</h3>
-              <p>OhioRISE (Resilience through Integrated Systems and Excellence) is Ohio's specialized high-intensity care coordination program for youth with the most complex behavioral and mental health needs. Upstar is an authorized OhioRISE provider, delivering intensive, coordinated care to help youth and families access the full range of services they need.</p>
+              <h3>OhioRISE Respite</h3>
+              <p class="service-bestfor">Best for: families of youth enrolled in OhioRISE who need a short, planned break from caregiving.</p>
+              <p>OhioRISE (Resilience through Integrated Systems and Excellence) is Ohio Medicaid's program for youth with complex behavioral health needs. Upstar provides respite for OhioRISE families: short-term, temporary care for your child so parents and caregivers can rest and recharge, knowing their child is with someone trained and caring.</p>
+              <p>Your OhioRISE care coordinator manages your child's overall care plan, and Upstar works alongside them. If you already have a care coordinator, ask them about a referral to Upstar for respite.</p>
             </div>
           </div>
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="school-based" data-anim>
             <span class="service-num">05</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
@@ -143,6 +167,7 @@
                 <span class="badge badge--navy">Youth</span>
               </div>
               <h3>School-Based &amp; Youth Services</h3>
+              <p class="service-bestfor">Best for: students whose behavior, stress, or emotions are getting in the way at school.</p>
               <p>Upstar offers classroom interventions and in-school counseling to help kids and teenagers behave better in class and deal with personal or in-school stressors.</p>
               <p>Services are tailored to each student and may include:</p>
               <ul>
@@ -166,7 +191,7 @@
             </div>
           </div>
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="cpst" data-anim>
             <span class="service-num">06</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
@@ -175,14 +200,29 @@
                 </div>
                 <span class="badge badge--navy">CPST</span>
               </div>
-              <h3>Therapeutic Behavioral Services &amp; CPST</h3>
-              <p>Community Psychiatric Supportive Treatment (CPST) and Therapeutic Behavioral Services provide structured, community-based psychiatric support to help clients develop skills, stabilize symptoms, and function effectively in daily life.</p>
-              <p>These services are designed for individuals who need more support than outpatient therapy alone delivered right in the community where our clients live and work.</p>
+              <h3>Community Psychiatric Supportive Treatment (CPST)</h3>
+              <p class="service-bestfor">Best for: youth and adults who need steady support in their daily lives, beyond a weekly therapy session.</p>
+              <p>CPST brings support out of the office and into the community. A CPST provider meets with clients at home, at school, or in the community to monitor symptoms, help prevent crises, coordinate care with other providers, and build the everyday skills needed to stay stable and independent.</p>
             </div>
           </div>
 
-          <div class="service-detail-row" data-anim>
+          <div class="service-detail-row" id="tbs" data-anim>
             <span class="service-num">07</span>
+            <div class="service-detail">
+              <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
+                <div class="service-card__icon" style="background:rgba(45,48,71,0.07);width:44px;height:44px">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <span class="badge badge--navy">TBS</span>
+              </div>
+              <h3>Therapeutic Behavioral Services (TBS)</h3>
+              <p class="service-bestfor">Best for: youth and adults working on specific behaviors or coping skills that need practice in real life.</p>
+              <p>TBS focuses on concrete, everyday goals, like managing anger, following routines, or handling stressful situations. Your TBS provider works with you and your treatment team to practice new skills and replace behaviors that are causing problems at home, at school, or in the community.</p>
+            </div>
+          </div>
+
+          <div class="service-detail-row" id="peer-support" data-anim>
+            <span class="service-num">08</span>
             <div class="service-detail">
               <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
                 <div class="service-card__icon" style="background:var(--orange-light);width:44px;height:44px">
@@ -191,6 +231,7 @@
                 <span class="badge badge--orange">Peer Support</span>
               </div>
               <h3>Peer Support Services</h3>
+              <p class="service-bestfor">Best for: clients who want support from someone who has lived through recovery themselves.</p>
               <p>Our lived-experience peer support specialists walk alongside clients on their path to recovery. Peer support offers a uniquely powerful connection with someone who truly understands the challenges our clients face.</p>
               <p>Peer support bridges the gap between clinical care and real-world recovery, offering hope, connection, and practical guidance.</p>
             </div>
@@ -243,12 +284,12 @@
         </div>
         <div class="footer-col">
           <h4>Services</h4>
-          <a href="services.html">Individual &amp; Family Therapy</a>
-          <a href="services.html">SUD Counseling</a>
-          <a href="services.html">Case Management</a>
-          <a href="services.html">OhioRISE</a>
-          <a href="services.html">School-Based Services</a>
-          <a href="services.html">Peer Support</a>
+          <a href="services.html#therapy">Individual &amp; Family Therapy</a>
+          <a href="services.html#sud">SUD Counseling</a>
+          <a href="services.html#case-management">Case Management</a>
+          <a href="services.html#ohiorise-respite">OhioRISE Respite</a>
+          <a href="services.html#school-based">School-Based Services</a>
+          <a href="services.html#peer-support">Peer Support</a>
         </div>
         <div class="footer-col">
           <h4>Get Help</h4>

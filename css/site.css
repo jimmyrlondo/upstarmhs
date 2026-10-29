@@ -1124,3 +1124,99 @@ a.contact-item__value:hover { color: var(--orange); }
   background: var(--green);
   color: #fff;
 }
+
+/* ---- REFER A CLIENT (header) ---- */
+@media (max-width: 1024px) {
+  .header-refer { display: none; }
+}
+
+/* ---- SERVICE JUMP NAV ---- */
+.service-jump-wrap {
+  padding-top: var(--space-8);
+}
+.service-jump__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+.service-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.service-jump a {
+  display: inline-flex;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.service-jump a:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.service-detail-row { scroll-margin-top: 96px; }
+.service-bestfor {
+  font-weight: 600;
+  color: var(--color-text);
+  border-left: 3px solid var(--orange);
+  padding-left: var(--space-3);
+}
+
+/* ---- REFERRAL PARTNERS BAND ---- */
+.referral-band__inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+}
+.referral-band h2 { margin: var(--space-3) 0; }
+.referral-band__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.referral-band__list li::before {
+  content: "\2713";
+  color: var(--green);
+  font-weight: 700;
+  margin-right: var(--space-2);
+}
+.referral-band__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.referral-band__actions .btn { text-align: center; justify-content: center; }
+.referral-band__contact {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .referral-band__inner {
+    grid-template-columns: 1fr;
+    padding: var(--space-8) var(--space-5);
+  }
+}
+
+/* keep the bottom CTA buttons inside the screen on phones */
+@media (max-width: 520px) {
+  .cta-actions { flex-shrink: 1; width: 100%; }
+  .cta-actions .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+}
