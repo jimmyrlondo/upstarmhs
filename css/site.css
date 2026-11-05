@@ -1250,3 +1250,29 @@ a.contact-item__value:hover { color: var(--orange); }
 @media (max-width: 600px) {
   .accred-card { flex-direction: column; text-align: center; padding: var(--space-6) var(--space-5); }
 }
+
+/* ---- TEAM ---- */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  justify-content: center;
+}
+.team-card {
+  margin: 0;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  flex: 0 1 260px;
+}
+.team-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.team-card figcaption { padding: var(--space-4) var(--space-5) var(--space-5); }
+.team-card h3 { margin: 0; font-size: var(--text-lg); }
+.team-card__role { margin: var(--space-1) 0 0; color: var(--color-text-muted); font-size: var(--text-sm); }
