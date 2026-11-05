@@ -1276,3 +1276,19 @@ a.contact-item__value:hover { color: var(--orange); }
 .team-card figcaption { padding: var(--space-4) var(--space-5) var(--space-5); }
 .team-card h3 { margin: 0; font-size: var(--text-lg); }
 .team-card__role { margin: var(--space-1) 0 0; color: var(--color-text-muted); font-size: var(--text-sm); }
+
+/* team cards with a bio: photo beside text on wider screens */
+.team-card:has(.team-card__bio) {
+  flex: 1 1 100%;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  align-items: center;
+}
+.team-card:has(.team-card__bio) img { height: 100%; }
+.team-card:has(.team-card__bio) figcaption { padding: var(--space-6) var(--space-8); }
+.team-card__bio { margin: var(--space-4) 0 0; line-height: 1.7; color: var(--color-text-muted); }
+@media (max-width: 640px) {
+  .team-card:has(.team-card__bio) { grid-template-columns: 1fr; }
+  .team-card:has(.team-card__bio) img { height: auto; }
+  .team-card:has(.team-card__bio) figcaption { padding: var(--space-5); }
+}
